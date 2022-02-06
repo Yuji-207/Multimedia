@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fffdf6;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    font-family: HGS ゴシック M;
+}
+
+p {
+    margin-top: 0;
+    line-height: 2;
+}
+
+#title {
+    font-family: AR DECODE;
+    font-size: 30pt;
+}
+
+h1  {
+    padding: 10px 10px 10px 20px;
+    font-size: 26px;
+    color: #44382d;
+    border-bottom: solid 2px #716961;
+    background-color: #efefef;
+}
+
+h2  {
+    font-family: HGS ゴシック M;
+    font-size: 22px;
+    border: 1px solid #b7a077;
+    padding: 10px 22px;
+    border-radius: 5px;
+}
+
+h3  {
+    font-size: 16px;
+    border-left: solid 3px #b7a077;
+    padding: 4px 9px 4px 14px;
+}
+
+p {
+    margin-top: 0;
+    line-height: 2;
+}

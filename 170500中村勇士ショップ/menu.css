@@ -1,0 +1,28 @@
+#main {
+    width: 980px;
+    height: 980px;
+}
+
+.menu {
+    padding-top: 0px;
+    padding-bottom: 20px;
+}
+
+.menu-card {
+    width: 280px;
+    height: 360px;
+    padding: 10px;
+    margin: 13px;
+    text-align: center;
+    float: left;
+}
+
+h2, footer{
+    clear: left;
+}
+
+.menu-image {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
