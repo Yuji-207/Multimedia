@@ -26,8 +26,8 @@ h2  {
 
 h3  {
     font-size: 18px;
-    padding: 7px;
-    border-left: solid 5px;
+    padding: 7px 7px 7px 15px;
+    border-left: solid 3px;
     clear: right;
 }
 
