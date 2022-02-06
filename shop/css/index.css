@@ -1,159 +1,18 @@
-#wrapper {
-    width: 980px;
-    margin: 0 auto;
-}
-
-#main {
-    width: 980px;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #f8f3e3;
-}
-
-img {
-    vertical-align:  bottom;
-}
-
-header h1 {
-    font-family: Segoe Print;
-}
-
-#main h1 {
-    padding: 10px 10px 10px 20px;
-    color: #5c564a;
-    border-bottom: solid 2px;
-    background-color: #fff5a9;
-    margin-top: 20px;
-}
-
-#main h2 {
-    padding: 8px 8px 8px 10px;
-    color: #5c564a;
-    border: solid 1px;
-    background-color: #f8f3e3;
-    border-radius: 10px;
-    clear: right;
-}
-
-#main h3 {
-    padding: 7px 7px 7px 7px;
-    color: #5c564a;
-    border-left: solid 5px;
-    background-color: #f8f3e3;
-}
-
-header {
-    width: 980px;
-    margin: 0 auto;
-}
-    
-
-footer {
-    background-color: #fff3e9;
-    text-align: center;
-}
-
-#footer_navi {
-    background-color: #fff3e9;
-}
-
-#footer_navi ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-#footer_navi li {
-    display: inline;
-    border-left: solid 1px #aaa;
-    margin-left: 10px;
-    padding-left: 10px;
-}
-
-footer small {
-    display: block;
-    color: #fcf4f4;
-    background-color: #6e0910;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-
-/* navigation */
-
-
-#navi ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-#navi li a {
-    display: block;
-    width: 130px;
-    padding: 16px;
-    background-color: #352b23;
-    color: #ffffff;
-    text-decoration: none;
-    text-align: center;
-    border-right: solid 1px #ffffff;
-}
-
-#navi li {
-    float: left;
-}
-
-#navi {
-    width: 980px;
-    margin: 0px auto;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
 #main_visual{
     width: 980px;
     margin: 0 auto;
     overflow: hidden;
 }
 
-#main {
-    width: 980px;
-    margin: 0 auto;
-    overflow: hidden;
+img {
+    vertical-align:  bottom;
 }
 
-a {
-    color: #b7a077;
+.smallpic {
+    float: right;
+    margin: 0 0 30px 20px;
 }
 
-a:visited {
-    color: #a8a8a8;
-}
-
-a:hover {
-    font-weight: bold;
-}
-
-#navi ul li a:hover {
-    background-color: #8c7a5b;
-}
-
-header {
-    margin: 10px 5px 5px 10px;
-}
-
-#global_navi li a {
-    transition: background-color 0.2s linear;
-}
-
-#navi ul li.current a {
-    background-color: #b7a077;
-}
-
-#navi {
-    width: 980px;
-    margin: 0 auto;
+#main p {
+    padding-left: 5px;
 }

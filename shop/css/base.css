@@ -1,42 +1,131 @@
+/* 基本的なタグ */
+
 body {
-    margin: 0;
+    font-family: 'Playfair Display', 'Noto Serif JP', serif;
+    color: #3E2723;
+    background-color: #FAFAFA;
     padding: 0;
-    background-color: #fffdf6;
-}
-
-h1, h2, h3 {
-    margin-top: 0;
-    font-family: HGS ゴシック M;
-}
-
-#title {
-    font-family: AR DECODE;
-    font-size: 30pt;
+    margin: 0;
 }
 
 h1  {
-    padding: 10px 10px 10px 20px;
-    font-size: 26px;
-    color: #44382d;
-    border-bottom: solid 2px #716961;
-    background-color: #efefef;
+    font-size: 48px;
+    text-align: center;
+    padding: 10px;
+    border-bottom: solid 2px #3E2723;
 }
 
 h2  {
-    font-family: HGS ゴシック M;
-    font-size: 22px;
-    border: 1px solid #b7a077;
+    font-size: 24px;
     padding: 10px 22px;
-    border-radius: 5px;
+    border: 1px solid #3E2723;
+     /* border-radius: 10px; */
+    margin-top: 40px;
+    clear: right;
 }
 
 h3  {
-    font-size: 16px;
-    border-left: solid 3px #b7a077;
-    padding: 4px 9px 4px 14px;
+    font-size: 18px;
+    padding: 7px;
+    border-left: solid 5px;
+    clear: right;
 }
 
 p {
-    margin-top: 0;
     line-height: 2;
+    margin-top: 0;
+}
+
+a {
+    color: #757575;
+}
+
+a:visited {
+    color: #BDBDBD;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+dl {
+    padding-left: 20px;
+}
+
+dd {
+    padding: 3px 0 10px 0;
+}
+
+
+/* 共通する要素 */
+
+#wrapper {
+    width: 980px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#navi {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#navi ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navi li a {
+    display: block;
+    width: 130px;
+    color: #FAFAFA;
+    background-color: #3E2723;
+    text-align: center;
+    text-decoration: none;
+    padding: 16px;
+}
+
+#navi ul li a:hover {
+    background-color: #4E342E;
+}
+
+/* #global_navi li a {
+    transition: background-color 0.2s linear;
+} */
+
+#navi ul li.current a {
+    background-color: #424242;
+}
+
+footer {
+    /* background-color: #FAFAFA; */
+    text-align: center;
+}
+
+/* #footer_navi {
+    background-color: #FAFAFA;
+} */
+
+/* #footer_navi ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+} */
+
+/* #footer_navi li {
+    display: inline;
+    border-left: solid 1px #FAFAFA;
+    margin-left: 10px;
+    padding-left: 10px;
+} */
+
+footer small {
+    display: block;
+    color: #FAFAFA;
+    background-color: #3E2723;
+    padding: 10px 0;
+    margin-top: 15px;
 }
