@@ -8,11 +8,33 @@ img {
     vertical-align:  bottom;
 }
 
+#main {
+    float: left;
+}
+
+#main h2, #main h3 {
+    margin-right: 30px;
+}
+
 .smallpic {
     float: right;
-    margin: 0 0 30px 20px;
+    margin: 0 30px 30px 20px;
 }
 
 #main p {
     padding-left: 5px;
+}
+
+#sidebar {
+    float: right;
+}
+
+#sidebar h2 {
+    padding: 10px;
+    border: 0;
+    border-bottom: 2px solid;
+}
+
+footer{
+    clear: both;
 }
