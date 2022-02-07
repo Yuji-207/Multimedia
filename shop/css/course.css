@@ -1,0 +1,24 @@
+#course p {
+    margin: 0;
+}
+
+#course table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+#course th, #course td {
+    padding: 8px;
+    border: 1px solid #BDBDBD;
+}
+
+#course th {
+    width: 80px;
+    text-align: center;
+    background-color: #ECEFF1;
+}
+
+.course {
+    padding: 20px 0;
+}
