@@ -38,3 +38,24 @@ img {
 footer{
     clear: both;
 }
+
+
+#main-visual {
+    text-align: left;
+    overflow: hidden;
+}
+
+#main-visual ul {
+    height: 375px;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+}
+
+#main-visual ul li {
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    position: absolute;
+}    

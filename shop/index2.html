@@ -11,7 +11,7 @@
     <!-- Font Awesome -->
     <script src="https://use.fontawesome.com/7c9d631a0c.js"></script>
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index2.css">
     <title>NAKAMURA COFFEE</title>
 </head>
 <body>
@@ -33,7 +33,12 @@
             </ul>
         </div>
         <div id="main-visual">
-            <img src="images/top-main-1.png" width="100%">
+            <ul>
+                <li><img src="images/top-main-1.png" width="100%" alt=""></li>
+                <li><img src="images/top-main-2.png" width="100%" alt=""></li>
+                <li><img src="images/top-main-3.png" width="100%" alt=""></li>
+                <li><img src="images/top-main-4.png" width="100%" alt=""></li>
+            </ul>
         </div>
         <div id="main">
             <h2>Marine Coffee のこだわり</h2>
@@ -68,5 +73,45 @@
     <footer>
         <small>&copy; 2022 NAKAMURA COFFEE</small>
     </footer>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script>
+
+        $(function() {
+
+            var $setElm = $('#main-visual'), fadeSpeed = 1500, switchDelay = 5000;
+
+            $setElm.each(function() {
+
+                var targetObj = $(this);
+                var findUl = targetObj.find('ul');
+                var findLi = targetObj.find('li');
+                var findLiFirst = targetObj.find('li:first');
+
+                findLi.css({display:'block', opacity:'0', zIndex:'99'});
+
+                findLiFirst
+                    .css({zIndex:'100'})
+                    .stop()
+                    .animate({opacity:'1'}, fadeSpeed);
+
+                setInterval(function(){
+                    findUl
+                        .find('li:first-child')
+                        .animate({opacity:'0'}, fadeSpeed)
+                        .next('li')
+                        .css({zIndex:'100'})
+                        .animate({opacity:'1'}, fadeSpeed)
+                        .end()
+                        .appendTo(findUl)
+                        .css({zIndex:'99'});
+                    }, switchDelay);
+                });
+
+        }); 
+
+    </script>
+
 </body>
 </html>

@@ -1,0 +1,10 @@
+.container{
+    display: grid;
+    grid-template-columns: 320px 320px 320px;
+}
+
+.item{
+    color: silver; 
+    padding: 15px;
+    text-align: center;
+}
