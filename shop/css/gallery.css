@@ -1,10 +1,19 @@
-.container{
+.container {
     display: grid;
-    grid-template-columns: 320px 320px 320px;
+    padding-top: 20px;
 }
 
-.item{
-    color: silver; 
-    padding: 15px;
+td {
+    text-align: center;
+}
+
+img {
+    width: 300px;
+    height: 193px;
+}
+
+.item {
+    color: #3E2723; 
+    padding: 10px;
     text-align: center;
 }
