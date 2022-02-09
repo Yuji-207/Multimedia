@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VARIESTA</title>
+</head>
+<body>
+    <header>
+        <h1>VARIESTA</h1>
+    </header>
+    <main>
+        <h2>VARIESTAへようこそ</h2>
+        <p>あなたのお気に入りのコーヒーレシピを保存して、つねに最高の一杯を楽しみましょう。</p>
+        <p>VARIESTAではレシピを保存できるだけでなく、他の人のレシピを見ることもできます。</p>
+        <p>さまざまなレシピを参考に、VARIESTAでより良い一杯を見つけてください！</p>
+        <form action="#">
+            <input type="text" id="name" placeholder="名前を入力"></input>
+            <input type="number" id="beans" min="0" step="0.1" placeholder="豆の量を入力">
+            <input type="number" id="temp" min="0" max="100" placeholder="湯温を入力">
+            <p>抽出ステップ</p>
+            <p>「+」でステップを追加、「-」でステップを削除できます。</p>
+            <div id="steps">
+                <div id="step">
+                    <p>#</p>
+                    <input type="number" class="water" min="0" placeholder="湯量">
+                    <input type="number" class="time" min="0" placeholder="注入時間">
+                    <p class="btn">+</p>
+                    <p class="btn">-</p>
+                </div>
+                <div id="step">
+                    <p>#</p>
+                    <input type="number" class="water" min="0" placeholder="油量">
+                    <input type="number" class="time" min="0" placeholder="注入時間">
+                    <p class="btn">+</p>
+                    <p class="btn">-</p>
+                </div>
+                <div id="step">
+                    <p>#</p>
+                    <input type="number" class="water" min="0" placeholder="油量">
+                    <input type="number" class="time" min="0" placeholder="注入時間">
+                    <p class="btn">+</p>
+                    <p class="btn">-</p>
+                </div>
+            </div>
+            <input type="button" id="submit" value="レシピを作成">
+            <p>＊レシピファイルを保存します。ダウンロードを許可してください。</p>
+        </form>
+    </main>
+    <footer>
+        <p>© 2022 VARIESTA</p>
+    </footer>
+    <!-- Vue.js -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- script -->
+    <script src="script.js"></script>
+</body>
+</html>
