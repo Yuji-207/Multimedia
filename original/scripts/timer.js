@@ -20,7 +20,7 @@ Vue.createApp({
 
         for (let i = 1; i < waters.length; i++) {
 
-            if time > times[i]:
+            // if time > times[i]:
                 times[i-1]
 
             water += waters[i];
