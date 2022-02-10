@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VARIESTA</title>
+</head>
+<body>
+    <header>
+        <h1>VARIESTA</h1>
+    </header>
+    <main>
+        <h2>「VARIESTA」へようこそ</h2>
+        <p>あなたのお気に入りのコーヒーレシピを保存して、つねに最高の一杯を楽しみましょう。</p>
+        <p>「VARIESTA」ではレシピをJSONファイルとして保存できるだけでなく、レシピに基づいたタイマー機能を使用することができます。</p>
+        <p>あなたのお気に入りの一杯を「VARIESTA」で見つけてください！</p>
+        <!-- jsonやめる -->
+        <!-- 実際に保存できなくて良いから、recipe.htmlをつける -->
+        <!-- script.jsを分けて、templates dirやscripts dirを作る -->
+        <!-- 作成 -> 抽出 -> 評価 -> 一覧のフローだけでなく -->
+        <!-- 一覧 -> 抽出 -> 評価 or 一覧 -> 評価のフローも作る -->
+        <!-- get methodで送れば同じ -->
+        <!-- 作成だけrequiredつける -->
+        <!-- 湯温は外す。timeは外すとうまくいかなくなる -->
+        <h2>レシピを入力</h2>
+        <div>
+            <input type="number" id="beans" name="beans" min="0" step="0.1" placeholder="豆の量（g）">
+            <input type="number" id="temp" name="temp" min="0" max="100" placeholder="湯温（℃）">
+            <h3>抽出ステップ</h3>
+            <p>「+」でステップを追加、「-」でステップを削除できます。</p>
+            <div id="steps">
+                <div class="step" v-for="i in counter">
+                    <p>#{{ i }}</p>
+                    <input type="number" class="water" name="water" min="0" placeholder="湯量（g）">
+                    <input type="number" class="time" name="time" min="0" placeholder="注入時間（秒）">
+                    <div v-if="i == counter">
+                        <button id="plus" @click="counter += 1">+</button>
+                        <button id="minus" @click="counter -= 1" v-if="counter > 1">-</button>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" id="to-timer" value="レシピを作成">
+        </div>
+    </main>
+    <footer>
+        <p>© 2022 VARIESTA</p>
+    </footer>
+    <!-- Vue.js -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- script -->
+    <script src="script.js"></script>
+</body>
+</html>

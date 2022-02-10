@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VARIESTA</title>
+</head>
+<body>
+    <header>
+        <h1>VARIESTA</h1>
+    </header>
+    <main>
+        <h2>レシピの評価</h2>
+        <form action="#">
+                <div v-for="item in items">
+                    <h3>{{ item.name }}</h3>
+                    <div>
+                        <p>{{ item.min }}</p>
+                        <input type="range" :id="item.id" min="1" max="5" value="3">
+                        <p>{{ item.max }}</p>
+                    </div>
+                </div>
+            <h3>コメント</h3>
+            <textarea id="note" cols="30" rows="10"></textarea>
+            <input type="submit" id="save" value="評価を保存">
+            <p>＊レシピファイルを保存します。ダウンロードを許可してください。</p>
+            <a href="create.html">タイマーに戻る</a>
+        </form>
+    </main>
+    <footer>
+        <p>© 2022 VARIESTA</p>
+    </footer>
+    <!-- Vue.js -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- script -->
+    <script src="script.js"></script>
+</body>
+</html>
