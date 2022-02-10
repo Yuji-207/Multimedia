@@ -4,43 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwindcss -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Serif+JP&display=swap" rel="stylesheet">
+    <!-- style -->
+    <link rel="stylesheet" href="../style.css">
     <title>VARIESTA</title>
 </head>
 <body>
     <header>
         <h1>VARIESTA</h1>
+        <div>
+            <a href="create.html" class="btn">レシピ作成</a>
+            <a href="recipes.html" class="btn">レシピ一覧</a>
+        </div>
     </header>
     <main>
-        <h2>「VARIESTA」へようこそ</h2>
-        <p>あなたのお気に入りのコーヒーレシピを保存して、つねに最高の一杯を楽しみましょう。</p>
-        <p>「VARIESTA」ではレシピをJSONファイルとして保存できるだけでなく、レシピに基づいたタイマー機能を使用することができます。</p>
-        <p>あなたのお気に入りの一杯を「VARIESTA」で見つけてください！</p>
-        <!-- jsonやめる -->
-        <!-- 実際に保存できなくて良いから、recipe.htmlをつける -->
-        <!-- script.jsを分けて、templates dirやscripts dirを作る -->
-        <!-- 作成 -> 抽出 -> 評価 -> 一覧のフローだけでなく -->
-        <!-- 一覧 -> 抽出 -> 評価 or 一覧 -> 評価のフローも作る -->
-        <!-- get methodで送れば同じ -->
-        <!-- 作成だけrequiredつける -->
-        <!-- 湯温は外す。timeは外すとうまくいかなくなる -->
-        <h2>レシピを入力</h2>
-        <div>
-            <input type="number" id="beans" name="beans" min="0" step="0.1" placeholder="豆の量（g）">
-            <input type="number" id="temp" name="temp" min="0" max="100" placeholder="湯温（℃）">
-            <h3>抽出ステップ</h3>
-            <p>「+」でステップを追加、「-」でステップを削除できます。</p>
-            <div id="steps">
-                <div class="step" v-for="i in counter">
-                    <p>#{{ i }}</p>
-                    <input type="number" class="water" name="water" min="0" placeholder="湯量（g）">
-                    <input type="number" class="time" name="time" min="0" placeholder="注入時間（秒）">
-                    <div v-if="i == counter">
-                        <button id="plus" @click="counter += 1">+</button>
-                        <button id="minus" @click="counter -= 1" v-if="counter > 1">-</button>
+        <div class="wrapper">
+            <h2>「VARIESTA」へようこそ</h2>
+            <div class="mx-3 my-2">
+                <p class="leading-10">お気に入りのコーヒーレシピを保存して、つねに最高の一杯を楽しみましょう。</p>
+                <p class="leading-10">「VARIESTA」では自分のレシピを保存するだけでなく、他の人のレシピを見ることができます。</p>
+                <p class="leading-10">バラエティに富んだレシピの中から、あなたのお気に入りの一杯を見つけてください！</p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <!-- formにすると#plusと#minusでページ遷移してしまう -->
+            <h2>レシピを入力</h2>
+            <div class="flex justify-evenly mx-3 my-2">
+                <div>
+                    <h3>基本情報</h3>
+                    <div>
+                        <input type="text" id="name" name="name" placeholder="作成者" required>
+                        <input type="number" id="beans"  name="beans" min="0" step="0.1" placeholder="豆の量（g）" required>
+                        <input type="number" id="temp" name="temp" min="0" max="100" placeholder="湯温（℃）">
+                    </div>
+                </div>
+                <div>
+                    <h3>抽出ステップ</h3>
+                    <div id="steps">
+                        <div class="step flex" v-for="i in counter">
+                            <!-- <p class="inline-block">#{{ i }}</p> -->
+                            <input type="number" class="water" name="water" min="0" placeholder="湯量（g）" required>
+                            <input type="number" class="time" name="time" min="0" placeholder="注入時間（秒）" required>
+                            <template v-if="i === counter">
+                                <button id="plus" @click="counter += 1">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                </button>
+                                <button id="plus" v-if="i > 1" @click="counter -= 1">
+                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                </button>
+                            </template>
+                        </div>
+                        <p class="text-sm leading-7">ステップは「+」で追加、「-」で削除できます。</p>
+                        <p class="text-sm leading-7">蒸らしを設定するときは湯量を「0 g」にしてください。</p>
                     </div>
                 </div>
             </div>
-            <input type="submit" id="to-timer" value="レシピを作成">
+            <button id="submit">レシピを作成</button>
         </div>
     </main>
     <footer>
@@ -48,7 +72,10 @@
     </footer>
     <!-- Vue.js -->
     <script src="https://unpkg.com/vue@next"></script>
-    <!-- script -->
-    <script src="scripts/create.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/3401cb8bdf.js"></script>
+    <!-- scripts -->
+    <script src="../scripts/functions.js"></script>
+    <script src="../scripts/create.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+// form
 Vue.createApp({
     data() {
         return {
@@ -9,50 +10,30 @@ Vue.createApp({
             ]
         }
     }
-  }).mount('form')
+  }).mount('#items')
 
 
-  // evalでJSONファイルを保存する
-document.getElementById('save').onclick = () => {
+// recipe.htmlに遷移
+document.getElementById('submit').onclick = () => {
 
-    const url = new URL(window.location.href);
-    const params = url.searchParams;
+    const eval = document.getElementById('eval').value;
+    const body = document.getElementById('body').value;
+    const acidity = document.getElementById('acidity').value;
+    const bitterness = document.getElementById('bitterness').value;
+    const note = document.getElementById('note').value;
 
-    const dt = new Date();
-    const year = String(dt.getFullYear());
-    const month = String(dt.getMonth() + 1).padStart(2, '0');
-    const date = String(dt.getDate()).padStart(2, '0');
-    const hours = String(dt.getHours()).padStart(2, '0');
-    const minutes = String(dt.getMinutes()).padStart(2, '0');
-    const seconds = String(dt.getSeconds()).padStart(2, '0');
-    
-    const path = 'variesta_' + year + month + date + '_' + hours + minutes + seconds + '.json';
-
-    save_as_json({
-
-        'beans': params.get('beans'),
-        'temp': params.get('temp'),
-        'waters': params.getAll('water'),
-        'times': params.getAll('time'),
-
-        'eval': document.getElementById('eval').value,
-        'body': document.getElementById('body').value,
-        'acidity': document.getElementById('acidity').value,
-        'bitterness': document.getElementById('bitterness').value,
-        'note': document.getElementById('note').value
-
-    }, path);
+    window.location.href = 'recipes.html' + getParams() + '&' + makeParams({
+        'eval': eval,
+        'body': body,
+        'acidity': acidity,
+        'bitterness': bitterness,
+        'note': note
+    }).slice(1);  // ?を削除
 
 };
 
 
-function save_as_json(data, fname) {
-
-    data = JSON.stringify(data);  // JSONに変換
-
-    const link = document.createElement('a');  // HTMLのリンク要素を生成
-    link.href = "data:text/plain," + encodeURIComponent(data);  // リンク先にデータを保持
-    link.download = fname;
-    link.click();
-
-}
+// timer.htmlに戻る
+document.getElementById('back').onclick = () => {
+    window.location.href = 'create.html' + getParams();
+};

@@ -1,3 +1,4 @@
+// 抽出ステップ
 Vue.createApp({
     data() {
         return {
@@ -7,21 +8,32 @@ Vue.createApp({
 }).mount('#steps')
 
 
+// timer.htmlに遷移
+document.getElementById('submit').onclick = () => {
 
-//createからtimerへの遷移時にパラメータを付加する
-document.getElementById('to-timer').onclick = () => {
-
+    const name = document.getElementById('name').value;
     const beans = document.getElementById('beans').value;
     const temp = document.getElementById('temp').value;
-    const waters = document.getElementsByClassName('water');
-    const times = document.getElementsByClassName('time');
+    const water_class = document.getElementsByClassName('water');
+    const time_class = document.getElementsByClassName('time');
 
-    let params = '?beans=' + beans + '&temp=' + temp;
-    
-    for (let i = 0; i < waters.length; i++) {
-        params += '&water=' + waters[i].value + '&times=' + times[i].value;
+    const waters = []
+    for (let water of water_class) {
+        waters.push(water.value);
     }
 
-    window.location.href = 'eval.html' + params;
+    const times = []
+    for (let time of time_class) {
+        times.push(time.value);
+    }
+
+    //　paramが埋められてたら！
+    window.location.href = 'eval.html' + makeParams({
+        'name': name,
+        'beans': beans,
+        'temp': temp,
+        'waters': waters,
+        'times': times
+    });
 
 };

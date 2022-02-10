@@ -4,36 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwindcss -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Serif+JP&display=swap" rel="stylesheet">
+    <!-- style -->
+    <link rel="stylesheet" href="../style.css">
     <title>VARIESTA</title>
 </head>
 <body>
     <header>
         <h1>VARIESTA</h1>
+        <div>
+            <a href="create.html" class="btn">レシピ作成</a>
+            <a href="recipes.html" class="btn">レシピ一覧</a>
+        </div>
     </header>
-    <main>
+    <main class="wrapper">
         <h2>レシピの評価</h2>
-        <form action="#">
-                <div v-for="item in items">
+        <!-- formにすると#backでページ遷移してしまう。パラメータも付けられない。 -->
+        <div class="flex justify-evenly m-3">
+            <div id="items" class="grid grid-cols-2">
+                <div class="self-center m-3" v-for="item in items">
                     <h3>{{ item.name }}</h3>
-                    <div>
+                    <div class="flex text-sm p-3">
                         <p>{{ item.min }}</p>
-                        <input type="range" :id="item.id" min="1" max="5" value="3">
+                        <input type="range" :id="item.id" class="range" min="1" max="5" value="3">
                         <p>{{ item.max }}</p>
                     </div>
                 </div>
-            <h3>コメント</h3>
-            <textarea id="note" cols="30" rows="10"></textarea>
-            <input type="submit" id="save" value="評価を保存">
-            <p>＊レシピファイルを保存します。ダウンロードを許可してください。</p>
-            <a href="create.html">タイマーに戻る</a>
-        </form>
+            </div>
+            <div class="m-3">
+                <h3>コメント</h3>
+                <textarea id="note" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="flex justify-center m-3">
+            <button id="back">戻る</button>
+            <button id="submit">評価を入力</button>
+        </div>
     </main>
     <footer>
         <p>© 2022 VARIESTA</p>
     </footer>
     <!-- Vue.js -->
     <script src="https://unpkg.com/vue@next"></script>
-    <!-- script -->
-    <script src="scripts/eval.js"></script>
+    <!-- scripts -->
+    <script src="../scripts/functions.js"></script>
+    <script src="../scripts/eval.js"></script>
 </body>
 </html>

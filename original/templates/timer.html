@@ -4,29 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwindcss -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Serif+JP&display=swap" rel="stylesheet">
+    <!-- style -->
+    <link rel="stylesheet" href="../style.css">
     <title>VARIESTA</title>
 </head>
 <body>
     <header>
-        <header>
-            <h1>VARIESTA</h1>
-        </header>
+        <h1>VARIESTA</h1>
+        <div>
+            <a href="create.html" class="btn">レシピ作成</a>
+            <a href="recipes.html" class="btn">レシピ一覧</a>
+        </div>
+    </header>
     <main>
-        <p>00:00</p>
-        <p>000 g</p>
-        <p>スタート / リセット・スタート</p>
-        <a id="to-eval">レシピを評価する</a>
-        <a href="create.html">レシピの作成に戻る</a>
+        <div>
+            <div id="counter">
+                Counter: {{ counter }}
+              </div>
+            <p>00:00</p>
+            <p>000 g</p>
+        </div>
+        <button>スタート / リセット・スタート</button>
+        <button id="submit">レシピを評価する</button>
+        <button id="back">レシピの作成に戻る</button>
     </main>
     <footer>
         <p>© 2022 VARIESTA</p>
     </footer>
-    <div id="counter">
-        Counter: {{ counter }}
-      </div>
     <!-- Vue.js -->
     <script src="https://unpkg.com/vue@next"></script>
-    <!-- script -->
-    <script src="scripts/timer.js"></script>
+    <!-- scripts -->
+    <script src="../scripts/functions.js"></script>
+    <script src="../scripts/timer.js"></script>
 </body>
 </html>
